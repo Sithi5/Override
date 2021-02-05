@@ -1,0 +1,27 @@
+***********************************
+*            -Level00 -           *
+Password:
+Authenticated!
+/bin/sh
+Invalid Password!
+
+int main()
+{
+	puts();
+	puts();
+	puts();
+	printf();
+	__isoc99_scanf();
+	if (compare negatif ou egal); mov    0x1c(%esp),%eax
+ 								  cmp    $0x149c,%eax
+	{
+		puts();
+		system();
+		return(0);
+	}
+	else
+	{
+		puts();
+		return(1);
+	}
+}
