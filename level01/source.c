@@ -22,10 +22,10 @@ int main(void)
 	fgets(a_user_name, 256, stdin);
 	var = verify_user_name();
 	if (var != 0)
-		{
-			puts("nope, incorrect username...");
-			return(1);
-		}
+	{
+		puts("nope, incorrect username...");
+		return(1);
+	}
 	puts("Enter Password:");
 	fgets(pass, 100, stdin);
 	var = verify_user_pass(pass);
