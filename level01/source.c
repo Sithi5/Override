@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 char *a_user_name;
 

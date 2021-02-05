@@ -9,7 +9,7 @@ int main()
 	puts("* \t     -Level00 -\t\t  *");
 	puts("***********************************");
 	printf("Password:");
-	scanf("%d", var);
+	scanf("%d", &var);
 	if (5276 == var)
 	{
 		puts("\nAuthenticated!");
