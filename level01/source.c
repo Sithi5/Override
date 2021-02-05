@@ -14,23 +14,24 @@ int verify_user_pass(char *str){
 int main(void)
 {
 	int var;
-	puts(********* ADMIN LOGIN PROMPT *********);
+	char pass[68];
+
+	puts("********* ADMIN LOGIN PROMPT *********");
 	printf("Enter Username:");
-	fgets(,256,stdin);
+	fgets(a_user_name, 256, stdin);
 	var = verify_user_name();
 	if (var != 0)
 		{
-			puts(nope, incorrect username...);
+			puts("nope, incorrect username...");
 			return(1);
 		}
 	puts("Enter Password:");
-	fgets(,100,stdin);
-	var = verify_user_pass();
-	if (var == 0)
+	fgets(pass, 100, stdin);
+	var = verify_user_pass(pass);
+	if (var == 0 || var != 0)
 	{
 		puts("nope, incorrect password...");
 		return(1);
 	}
-	if (var == 0)
-		return(0);
+	return(0);
 }
