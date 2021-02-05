@@ -1,12 +1,4 @@
-
-dat_wil
-admin
-********* ADMIN LOGIN PROMPT *********
-Enter Username:
-nope, incorrect username...
-Enter Password:
-nope, incorrect password...
-//;*2$"$
+#include <stdio.h>
 
 char *a_user_name;
 
@@ -21,5 +13,24 @@ int verify_user_pass(char *str){
 
 int main(void)
 {
-
+	int var;
+	puts(********* ADMIN LOGIN PROMPT *********);
+	printf("Enter Username:");
+	fgets(,256,stdin);
+	var = verify_user_name();
+	if (var != 0)
+		{
+			puts(nope, incorrect username...);
+			return(1);
+		}
+	puts("Enter Password:");
+	fgets(,100,stdin);
+	var = verify_user_pass();
+	if (var == 0)
+	{
+		puts("nope, incorrect password...");
+		return(1);
+	}
+	if (var == 0)
+		return(0);
 }
