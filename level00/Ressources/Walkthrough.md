@@ -1,4 +1,4 @@
-# Explicatiosn
+# Explications
 
 On contaste la présence d"un binaire **level00** :
 
