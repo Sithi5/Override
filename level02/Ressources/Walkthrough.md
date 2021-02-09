@@ -1,18 +1,18 @@
 # LEVEL 02
 
-Le binaire level02 ne contiens qu'une fonction main.
+Le binaire level02 ne contiens qu'une fonction **main**.
 
-cette fonction appelle **open** de **"/home/users/level03/.pass"** suivie d'une comparaison menant à un **exit**, puis un **fread**.
+Cette fonction appelle **open** de **"/home/users/level03/.pass"** suivi d'une comparaison menant à un **exit**, puis un **fread**.
 
-Cela nous réstreint dans notre utilisation de GDB, mais on sais que le pass est stocker quelque-part dans la **stack**.
+Cela nous restreint dans notre utilisation de GDB, mais on sait que le **pass** est stocké quelque-part dans la **stack**.
 
-Le programme lit  lit 2 fois sur l'entrée standard via **fgets**.
+Le programme lit 2 fois sur l'entrée standard via **fgets**.
 
-la premiere string **login** est passé en premier argument à la fonction printf.
+La premiere string **login** est passée en premier argument à la fonction **printf**.
 
-la deusième string **passwd** est comparé au fichier **level03/.pass** et si la comparaison réussie le programme lance un shell.
+La deuxième string **passwd** est comparée au fichier **level03/.pass** et si la comparaison réussie le programme lance un **shell**.
 
-On peux via le **scipt** ci dessous récupérer dans un fichier les valeurs stocker dans la stack de la fonction main:
+On peut via le **script** ci dessous récupérer dans un fichier les valeurs stockées dans la **stack** de la fonction **main**:
 
 <pre>
 #!/bin/sh
@@ -50,7 +50,7 @@ En regardant le fichier créé on trouve un zone mémoire contenant 40 caractèr
 ...
 </pre>
 
-On peux essayer de traduire cette string de 40 char.
+On peut essayer de traduire cette string de 40 char.
 
 On doit inverser la position de chaque valeur dans chaque zone mémoire pour passer de little endian à big endian.
 Puis convertir les valeurs de l'hexa vers la **table ascii**:

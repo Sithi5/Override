@@ -9,19 +9,19 @@ verify_user_pass
 main
 </pre>
 
-Aucune de c'est fonction n'appelle la fonction system ou ne créé de shell, mais la fonction **main** appelle succéssivement la fonction **verify_user_name** et **verify_user_pass**.
+Aucune de ces fonction n'appelle la fonction system ou ne créer de shell, mais la fonction **main** appelle successivement la fonction **verify_user_name** et **verify_user_pass**.
 
-Chaque fonction **verify_** compare les strings récupérer avec:
+Chaque fonction **verify_** compare les strings récupérées avec:
 
 <pre>
 dat_wil => verify_user_name
 admin	=> verify_user_pass
 </pre>
 
-le **buffer static** qui stock le **pass** est nettement inférieur a la taille de la string récupérer dans le second **fgets()**, On peux Overflow la stack grace au ce buffer.
+Le **buffer static** qui stocke le **pass** est nettement inférieur à la taille de la string récupérée dans le second **fgets()**, on peux Overflow la stack grâce a ce buffer.
 
 
-On cherche si l'on peux écraser **EIP** et si oui à partir de quel octets et combien d'octect en plus nous pouvons écrire:
+On cherche si l'on peux écraser **EIP** et si oui à partir de quels octets et combien d'octects en plus nous pouvons écrire:
 <pre>
 b *main + 169	// Apres le second fgets
 run
@@ -49,9 +49,9 @@ addr du buffer    => 0xffffd6cc
 offset buffer/EIP 80 oct
 </pre>
 
-Nous écrasons **EIP** à partir de l'octet 80 et notre buffer fait un taille de 100octet.
+Nous écrasons **EIP** à partir de l'octet 80 et notre buffer fait un taille de 100 octets.
 
-Nous pouvons éffectuer un **RET2LIBC**:
+Nous pouvons effectuer un **RET2LIBC**:
 
 <pre>
 (gdb) b *main

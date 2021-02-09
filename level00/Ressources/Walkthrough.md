@@ -42,13 +42,13 @@ Dump of assembler code for function main:
 End of assembler dump.
 ```
 
-Le programme recupère un **int** grâce a un **scanf("%d")** :
+Le programme récupère un **int** grâce à un **scanf("%d")** :
 ```gdb
 (gdb) > x/s 0x8048636
 0x8048636:       "%d"
 ```
 
-Puis ce resultat va etre comparé a 5276 :
+Puis ce résultat va être comparé à 5276 :
 ```gdb
    0x080484e3 <+79>:    mov    0x1c(%esp),%eax
    0x080484e7 <+83>:    cmp    $0x149c,%eax

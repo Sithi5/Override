@@ -21,7 +21,7 @@ En traduisant le code (**source.c**), on s'appercoit que le main utilise un **sc
 $6 = 322424845
 ```
 
- Il y a par la suite la fonction **test** qui prend en argument cet int et la donnée 322424845. Dans cette fonction, on soustrait le second int au premier, et on compare le résultat avec 21, et si celui ci est inférieur ou égal a 21, l'int sera envoyé dans la fonction **decrypt**.
+ Il y a par la suite la fonction **test** qui prend en argument ce dernier et la valeur 322424845. Dans cette fonction, on soustrait le second int au premier, et on compare le résultat avec 21, et si celui ci est inférieur ou égal a 21, l'int sera envoyé dans la fonction **decrypt**.
 
 ```gdb
    0x08048755 <+14>:    sub    %eax,%ecx
