@@ -23,7 +23,7 @@ int auth(char *login, unsigned int serial)
 {
     int len;
     int tmp;
-    int i = 0;
+    int i;
 
     login[strcspn(login, "\n")] = 0;
     len = strnlen(login, 32);
@@ -36,19 +36,18 @@ int auth(char *login, unsigned int serial)
             puts("[32m'---------------------------'");
             return (1);
         }
-        tmp = login[3] ^ 4919 + 6221293;
+        tmp = (login[3] ^ 4919) + 6221293;
         i = 0;
         while (i < len)
         {
             if (login[i] <= 31)
                 return (1);
+            tmp = homemade_hashing(tmp);
             i++;
         }
     }
-    if (tmp == i)
-    {
+    if (tmp == serial)
         return (0);
-    }
     return (1);
 }
 
