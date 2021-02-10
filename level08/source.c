@@ -18,6 +18,7 @@ int main(int ac,char **av)
 {
 	FILE *backup;
 	FILE *file;
+	char buffer[99];
 	int fd;
 	char c;
 
@@ -39,7 +40,7 @@ int main(int ac,char **av)
 		printf("ERROR: Failed to open %s\n");
 		exit(1);
 	}
-	char buffer[99] = "./backups/";
+	strcpy(buffer, "./backups/");
 	strncat(buffer, av[1], 99 - strlen(buffer) - 1);
 	fd = open(av[1], O_CREAT | O_EXCL | O_WRONLY, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP);
 	if (!fd)
