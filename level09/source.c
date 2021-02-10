@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-struct s_struct
+struct 	s_struct
 {
-    char message[128]; // check the size
-    char username[40]; // check the size
+    char message[128];
+    char username[40];
     unsigned int i;
 };
 
@@ -42,7 +42,7 @@ void set_msg(s_struct *s)
     puts(">: Msg @Unix-Dude");
     printf(">>:");
     fgets(message, 1024, stdin);
-    strncpy(s->message, message, s->i); // s->i == 140
+    strncpy(s->message, message, s->i);
     return;
 }
 

