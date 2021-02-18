@@ -33,23 +33,20 @@ you all along your career. Before asking for help, ask yourself if you have fact
 possibilities in.
 
 
-| Name | Link |
-|:---------:|:--------:|
-| level00 | [FR](https://github.com/ChokMania/override/blob/master/level00/Ressources/Walkthrough.md) |
-| level01 | [FR](https://github.com/ChokMania/override/blob/master/level01/Ressources/Walkthrough.md) |
-| level02 | [FR](https://github.com/ChokMania/override/blob/master/level02/Ressources/Walkthrough.md) |
-| level03 | [FR](https://github.com/ChokMania/override/blob/master/level03/Ressources/Walkthrough.md) |
-| level04 | [FR](https://github.com/ChokMania/override/blob/master/level04/Ressources/Walkthrough.md) |
-| level05 | [FR](https://github.com/ChokMania/override/blob/master/level05/Ressources/Walkthrough.md) |
-| level06 | [FR](https://github.com/ChokMania/override/blob/master/level06/Ressources/Walkthrough.md) |
-| level07 | [FR](https://github.com/ChokMania/override/blob/master/level07/Ressources/Walkthrough.md) |
-| level08 | [FR](https://github.com/ChokMania/override/blob/master/level08/Ressources/Walkthrough.md) |
-| level09 | [FR](https://github.com/ChokMania/override/blob/master/level09/Ressources/Walkthrough.md) |
+| Name    | Link                                                                                      |
+|:-------:|:-----------------------------------------------------------------------------------------:|
+| level00 | [FR](https://github.com/Sithi5/Override/blob/master/level00/Ressources/Walkthrough.md) |
+| level01 | [FR](https://github.com/Sithi5/override/blob/master/level01/Ressources/Walkthrough.md) |
+| level02 | [FR](https://github.com/Sithi5/override/blob/master/level02/Ressources/Walkthrough.md) |
+| level03 | [FR](https://github.com/Sithi5/override/blob/master/level03/Ressources/Walkthrough.md) |
+| level04 | [FR](https://github.com/Sithi5/override/blob/master/level04/Ressources/Walkthrough.md) |
+| level05 | [FR](https://github.com/Sithi5/override/blob/master/level05/Ressources/Walkthrough.md) |
+| level06 | [FR](https://github.com/Sithi5/override/blob/master/level06/Ressources/Walkthrough.md) |
+| level07 | [FR](https://github.com/Sithi5/override/blob/master/level07/Ressources/Walkthrough.md) |
+| level08 | [FR](https://github.com/Sithi5/override/blob/master/level08/Ressources/Walkthrough.md) |
+| level09 | [FR](https://github.com/Sithi5/override/blob/master/level09/Ressources/Walkthrough.md) |
 
 ## Authors
 
-- [Florian Blanchard](https://github.com/floblanc)
-- [Valentin Robert](https://github.com/slumfy)
 - [Mathieu Ginisty](https://github.com/maginist)
 - [Malo Boucé](https://github.com/Sithi5)
-- [Julien Dumay](https://github.com/ChokMania)

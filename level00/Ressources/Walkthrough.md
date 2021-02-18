@@ -65,7 +65,8 @@ Et si la comparaison est valide, le programme lance un shell:
 
 # Exploit
 
-<pre><code> ./level00
+```bash
+./level00
 ***********************************
 *            -Level00 -           *
 ***********************************
@@ -75,6 +76,7 @@ Authenticated!
 $ cd ../level01 && cat .pass
 uSq2ehEGT6c9S24zbshexZQBXUGrncxn5sD5QfGL
 </code></pre>
+```
 
 For download :
 <pre><code>scp -P4242 level00@IP:level0 .</code></pre>

@@ -72,7 +72,7 @@ passwd => Hh74RPnuQ9sa5JAEXgNWCqz7sXGnh5J5M9KfPg3H
 
 En le testant:
 <pre>
-./level03
+./level02
 "test"
 "Hh74RPnuQ9sa5JAEXgNWCqz7sXGnh5J5M9KfPg3H"
 Greetings, test!
