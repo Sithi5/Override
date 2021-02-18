@@ -6,9 +6,10 @@ En traduisant le code (**source.c**), on s'appercoit que le main utilise un **ge
 
 Petite particularité, il y a la création d'un **child**, que gdb (par défault) ne suit pas. (If PID)
 
-Pour contrer cela nous utlisons la commande <code>set follow-fork-mode child</code>
+Pour contrer cela nous utlisons la commande `set follow-fork-mode child`
 
-Ainsi recuperer l'Offset nous faisons donc :
+Ainsi pour récuperer l'Offset nous faisons donc :
+
 ```gdb
 (gdb) set follow-fork-mode child
 
@@ -72,7 +73,7 @@ Mapped address spaces:
         0xf7ffc000 0xf7ffd000     0x1000    0x1f000 /lib32/ld-2.15.so
         0xf7ffd000 0xf7ffe000     0x1000    0x20000 /lib32/ld-2.15.so
         0xfffdd000 0xffffe000    0x21000        0x0 [stack]
-(gdb) find 0xf7e2c000, 0xf7fcc000, "/bin/sh"
+(gdb) find 0xf7e2c000, 0xf7fd0000, "/bin/sh"
 0xf7f897ec
 1 pattern found.
 ```
