@@ -57,3 +57,15 @@ GbcPDRgsFK77LNnnuh7QyFYA2942Gp8yKj9KrWD8
 ```
 
 #### Success !
+
+
+Une autre façon de faire est de mettre un **breakpoint** au niveau du **strcmp** et de regarder la valeur du registre de notre **hash** :
+`p/d *(int)($ebp-0x10)`
+Il faut également bypass le **ptrace**:
+```gdb
+catch syscall ptrace
+commands 1
+set ($eax) = 0
+continue
+end
+```
